@@ -1,46 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Simple Web Page</title>
-</head>
-<body>
-	<!-- H1 Tag for bigger headings -->
-	<h1>Things I've Learned</h1>
-	<!-- H2 Tag for Quote smaller headings -->
-	<h2>Internet Basics</h2>
-	<ol>
-		<!-- Ordered List -->
-		<li>HTTP Requests</li>
-		<li>IP Address</li>
-		<li>Servers</li>
-	</ol> 
-	<h2>HTML</h2>
-	<ul>
-		<!-- Unordered List -->
-		<li>Stands for <strong>Hyper Text Markup Language</strong></li>
-		<li>Dots of tags</li>
-		<ul>
-			<!-- Unordered List -->
-			<li> Boilerplate
-				<ol>
-					<!-- Ordered List -->
-					<li>Doctype</li>
-					<li>HTML</li>
-					<li>Head
-						<ol>
-							<!-- Ordered List -->
-							<li>Title</li>
-						</ol>
-					</li>
-					<li>Body</li>
-				</ol>
-			</li>
-			<li>Headings</li>
-			<li>Paragraph</li>
-			<li>em</li>
-			<li><strong>strong</strong></li>
-		</ul>
-	</ul>
-
-</body>
-</html>
+var rows = prompt("How many rows for your multiplication table?");
+    var cols = prompt("How many columns for your multiplication table?");
+    if(rows == "" || rows == null)
+   		 rows = 10;
+    if(cols== "" || cols== null)
+   		 cols = 10;
+    createTable(rows, cols);
+    function createTable(rows, cols)
+    {
+      var j=1;
+      var output = "<table border='1' width='500' cellspacing='0'cellpadding='5'>";
+      for(i=1;i<=rows;i++)
+      {
+    	output = output + "<tr>";
+        while(j<=cols)
+        {
+  		  output = output + "<td>" + i*j + "</td>";
+   		  j = j+1;
+   		}
+   		 output = output + "</tr>";
+   		 j = 1;
+    }
+    output = output + "</table>";
+    document.write(output);
